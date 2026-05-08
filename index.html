@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المدرسة الذكية | تجربة تعليمية حديثة</title>
+  <!-- Google Fonts: Outfit & Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Glows -->
+  <div class="glow-bg">
+    <div class="glow-circle glow-1"></div>
+    <div class="glow-circle glow-2"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" id="nav-logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>المدرسة الذكية</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#" class="nav-link active" data-target="home-section">الرئيسية</a>
+        <a href="#" class="nav-link" data-target="login-section" id="nav-login-btn">تسجيل الدخول</a>
+        <a href="#" class="nav-link" data-target="signup-section" id="nav-signup-btn">إنشاء حساب</a>
+        <a href="#" class="nav-link hidden" data-target="dashboard-section" id="nav-dashboard-btn">لوحة التحكم</a>
+        <button class="logout-btn hidden" id="logout-btn"><i class="fa-solid fa-sign-out-alt"></i> خروج</button>
+      </nav>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+
+    <!-- 1. HOME SECTION -->
+    <section id="home-section" class="app-section active">
+      <div class="hero">
+        <div class="hero-text">
+          <span class="badge">مستقبل التعليم هنا ✨</span>
+          <h1>ابدأ رحلة تعليمية فريدة وتفاعلية</h1>
+          <p>منصة المدرسة الذكية تمكنك من متابعة حصصك، واجباتك، ومستواك الدراسي بكل سهولة واحترافية.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="showSection('signup-section')">سجل الآن مجاناً <i class="fa-solid fa-arrow-left"></i></button>
+            <button class="btn btn-secondary" onclick="showSection('login-section')">تسجيل الدخول</button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-card-glowing">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>تطوير ذكي ومستمر</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="features">
+        <h2 class="section-title">لماذا المدرسة الذكية؟</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>مناهج شاملة</h3>
+            <p>متابعة كافة المواد الدراسية الخاصة بمرحلتك التعليمية بطريقة منظمة.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <h3>جداول تفاعلية</h3>
+            <p>عرض جداولك الأسبوعية والتنبيهات الهامة لحظة بلحظة دون عناء.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>إحصائيات الأداء</h3>
+            <p>متابعة درجاتك وتطور مستواك الدراسي مع تقارير شاملة باستمرار.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. LOGIN SECTION -->
+    <section id="login-section" class="app-section">
+      <div class="auth-container">
+        <div class="auth-card">
+          <h2>أهلاً بك مجدداً 👋</h2>
+          <p class="auth-subtitle">سجل دخولك للوصول إلى حسابك الأكاديمي</p>
+          
+          <form id="login-form" class="auth-form">
+            <div class="form-group">
+              <label for="login-email">البريد الإلكتروني</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="login-email" placeholder="example@gmail.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="login-password">كلمة المرور</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="login-password" placeholder="********" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" id="login-submit">
+              <span class="btn-text">تسجيل الدخول</span>
+              <div class="spinner hidden"><i class="fa-solid fa-circle-notch fa-spin"></i></div>
+            </button>
+          </form>
+          
+          <div class="auth-footer">
+            <span>ليس لديك حساب؟</span>
+            <a href="#" onclick="showSection('signup-section')">أنشئ حساب جديد الآن</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SIGNUP SECTION -->
+    <section id="signup-section" class="app-section">
+      <div class="auth-container">
+        <div class="auth-card">
+          <h2>إنشاء حساب جديد 🎓</h2>
+          <p class="auth-subtitle">انضم إلينا الآن وابدأ التعلم الذكي</p>
+          
+          <form id="signup-form" class="auth-form signup-grid-form">
+            <div class="form-group">
+              <label for="signup-fname">الاسم الأول</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="signup-fname" placeholder="مثال: لوجي" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="signup-lname">الاسم الأخير</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="signup-lname" placeholder="مثال: إبراهيم" required>
+              </div>
+            </div>
+            <div class="form-group col-span-2">
+              <label for="signup-email">البريد الإلكتروني</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="signup-email" placeholder="example@gmail.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="signup-password">كلمة المرور</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="signup-password" placeholder="********" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="signup-cpassword">تأكيد كلمة المرور</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="signup-cpassword" placeholder="********" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="signup-gender">النوع</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-venus-mars"></i>
+                <select id="signup-gender" required>
+                  <option value="male">ذكر</option>
+                  <option value="female">أنثى</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="signup-grade">المرحلة الدراسية</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <input type="text" id="signup-grade" placeholder="مثال: 1" required>
+              </div>
+            </div>
+            <div class="form-group col-span-2">
+              <label for="signup-subjects">المواد الدراسية (مفصولة بفاصلة)</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-book"></i>
+                <input type="text" id="signup-subjects" placeholder="math, arabic, english" required>
+              </div>
+            </div>
+            <div class="form-group col-span-2">
+              <label for="signup-hobbies">الهوايات (مفصولة بفاصلة)</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-heart"></i>
+                <input type="text" id="signup-hobbies" placeholder="reading, football, swimming">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block col-span-2" id="signup-submit">
+              <span class="btn-text">إنشاء الحساب</span>
+              <div class="spinner hidden"><i class="fa-solid fa-circle-notch fa-spin"></i></div>
+            </button>
+          </form>
+          
+          <div class="auth-footer">
+            <span>لديك حساب بالفعل؟</span>
+            <a href="#" onclick="showSection('login-section')">تسجيل الدخول</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. DASHBOARD SECTION -->
+    <section id="dashboard-section" class="app-section">
+      <div class="dashboard-container">
+        
+        <!-- Profile Overview Card -->
+        <div class="profile-header-card">
+          <div class="avatar-container">
+            <div class="avatar" id="profile-avatar">U</div>
+          </div>
+          <div class="profile-main-info">
+            <h2 id="profile-fullname">جاري التحميل...</h2>
+            <p id="profile-email-text"></p>
+            <span class="grade-badge" id="profile-grade-badge">الصف الدراسي: -</span>
+          </div>
+          <button class="btn btn-primary edit-profile-toggle" id="edit-profile-btn"><i class="fa-solid fa-user-gear"></i> تعديل البيانات</button>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- Main Profile Details Card -->
+          <div class="info-card">
+            <h3>المعلومات الدراسية والشخصية</h3>
+            <div class="info-list">
+              <div class="info-item">
+                <span class="info-label">الاسم الأول:</span>
+                <span class="info-val" id="profile-fname-val">-</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">الاسم الأخير:</span>
+                <span class="info-val" id="profile-lname-val">-</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">النوع:</span>
+                <span class="info-val" id="profile-gender-val">-</span>
+              </div>
+            </div>
+
+            <!-- Subjects Tags -->
+            <div class="tags-section">
+              <h4>المواد الدراسية</h4>
+              <div class="tags-container" id="profile-subjects-tags">
+                <!-- Dynamic Tags -->
+              </div>
+            </div>
+
+            <!-- Hobbies Tags -->
+            <div class="tags-section">
+              <h4>الهوايات المشترك بها</h4>
+              <div class="tags-container" id="profile-hobbies-tags">
+                <!-- Dynamic Tags -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Edit Profile Form (Hidden by default, shown when clicking Edit) -->
+          <div class="edit-profile-card hidden" id="edit-profile-card">
+            <h3>تعديل الملف الشخصي ✏️</h3>
+            <form id="edit-profile-form">
+              <div class="form-group">
+                <label for="edit-fname">الاسم الأول الجديد</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" id="edit-fname" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="edit-grade">المرحلة الدراسية</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                  <input type="text" id="edit-grade" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="edit-email">البريد الإلكتروني الجديد</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" id="edit-email" required>
+                </div>
+              </div>
+
+              <!-- Password Change Area -->
+              <div class="password-change-area">
+                <h4>تحديث كلمة المرور (اختياري)</h4>
+                <div class="form-group">
+                  <label for="edit-old-password">كلمة المرور الحالية</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-lock-open"></i>
+                    <input type="password" id="edit-old-password" placeholder="********">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="edit-new-password">كلمة المرور الجديدة</label>
+                  <div class="input-wrapper">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="edit-new-password" placeholder="********">
+                  </div>
+                </div>
+              </div>
+
+              <div class="edit-actions">
+                <button type="submit" class="btn btn-primary" id="edit-submit">حفظ التغييرات</button>
+                <button type="button" class="btn btn-secondary" id="edit-cancel-btn">إلغاء</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Notification Popup -->
+  <div id="toast-notification" class="toast hidden">
+    <div class="toast-content">
+      <i class="fa-solid fa-circle-info" id="toast-icon"></i>
+      <span id="toast-message">هذه رسالة تنبيه</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
