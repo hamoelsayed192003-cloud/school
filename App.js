@@ -104,6 +104,7 @@ function checkAuthStatus() {
     navDashboardBtn.classList.remove('hidden');
     logoutBtn.classList.remove('hidden');
     showSection('dashboard-section');
+  } else {
     // إظهار أزرار التسجيل وإخفاء التحكم
     navLoginBtn.classList.remove('hidden');
     navSignupBtn.classList.remove('hidden');
